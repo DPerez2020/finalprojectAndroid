@@ -14,7 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Main2Activity_nivel2 extends AppCompatActivity {
+public class Main2Activity_nivel5 extends AppCompatActivity {
 
     private TextView txv_score,txv_nombre;
     private ImageView img_num1,img_num2,img_vidas;
@@ -28,8 +28,8 @@ public class Main2Activity_nivel2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2_nivel1);
-        Toast.makeText(this,"Nivel 2- Sumas moderadas",Toast.LENGTH_SHORT).show();
+        setContentView(R.layout.activity_main2_nivel5);
+        Toast.makeText(this,"Nivel 5- Multiplicacion",Toast.LENGTH_SHORT).show();
         txv_score=findViewById(R.id.textView_score);
         txv_nombre=findViewById(R.id.textView_nombre);
         img_num1=findViewById(R.id.imageView_Num1);
@@ -118,22 +118,22 @@ public class Main2Activity_nivel2 extends AppCompatActivity {
     }
 
     public void num_aleatorio(){
-        if(score<=9){
+        if(score<=24){
             num_aleatorio_uno= (int)(Math.random()*10);
             num_aleatorio_dos= (int)(Math.random()*10);
 
-            resultado=num_aleatorio_dos+num_aleatorio_uno;
-                for (int i=0;i<numero.length;i++){
-                    int id=getResources().getIdentifier(numero[i],"drawable",getPackageName());
-                    if(num_aleatorio_uno==i){
-                        img_num1.setImageResource(id);
-                    }else if(num_aleatorio_dos==i){
-                        img_num2.setImageResource(id);
-                    }
+            resultado=num_aleatorio_dos*num_aleatorio_uno;
+            for (int i=0;i<numero.length;i++){
+                int id=getResources().getIdentifier(numero[i],"drawable",getPackageName());
+                if(num_aleatorio_uno==i){
+                    img_num1.setImageResource(id);
+                }else if(num_aleatorio_dos==i){
+                    img_num2.setImageResource(id);
                 }
+            }
         }
         else{
-            Intent intent = new Intent(this,Main2Activity_nivel3.class);
+            Intent intent = new Intent(this,Main2Activity_nivel6.class);
             string_score=String.valueOf(score);
             string_vidas=String.valueOf(vidas);
 

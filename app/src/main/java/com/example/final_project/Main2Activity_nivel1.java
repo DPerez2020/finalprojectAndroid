@@ -103,7 +103,7 @@ public class Main2Activity_nivel1 extends AppCompatActivity {
     }
 
     public void num_aleatorio(){
-        if(score<=9){
+        if(score<=4){
             num_aleatorio_uno= (int)(Math.random()*10);
             num_aleatorio_dos= (int)(Math.random()*10);
 

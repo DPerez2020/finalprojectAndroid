@@ -14,10 +14,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Main2Activity_nivel2 extends AppCompatActivity {
+
+public class Main2Activity_nivel4 extends AppCompatActivity {
 
     private TextView txv_score,txv_nombre;
-    private ImageView img_num1,img_num2,img_vidas;
+    private ImageView img_num1,img_num2,img_vidas,img_signo;
     private EditText edt_respuesta;
     private MediaPlayer mp,mp_great,mp_bad;
 
@@ -28,13 +29,14 @@ public class Main2Activity_nivel2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2_nivel1);
-        Toast.makeText(this,"Nivel 2- Sumas moderadas",Toast.LENGTH_SHORT).show();
+        setContentView(R.layout.activity_main2_nivel4);
+        Toast.makeText(this,"Nivel 4- Sumas y Restas",Toast.LENGTH_SHORT).show();
         txv_score=findViewById(R.id.textView_score);
         txv_nombre=findViewById(R.id.textView_nombre);
         img_num1=findViewById(R.id.imageView_Num1);
         img_num2=findViewById(R.id.imageView_Num2);
         img_vidas=findViewById(R.id.imageView_vidas);
+        img_signo=findViewById(R.id.imageView_signo);
         edt_respuesta=findViewById(R.id.editText_resultado);
 
         nombre_jugador=getIntent().getStringExtra("jugador");
@@ -118,11 +120,26 @@ public class Main2Activity_nivel2 extends AppCompatActivity {
     }
 
     public void num_aleatorio(){
-        if(score<=9){
+        if(score<=19){
             num_aleatorio_uno= (int)(Math.random()*10);
             num_aleatorio_dos= (int)(Math.random()*10);
 
-            resultado=num_aleatorio_dos+num_aleatorio_uno;
+            if(num_aleatorio_uno>=0 && num_aleatorio_uno<=4){
+                resultado=num_aleatorio_uno+num_aleatorio_dos;
+                img_signo.setImageResource(R.drawable.adicion);
+            }
+            else
+            {
+                if(num_aleatorio_uno>=num_aleatorio_dos){
+                    resultado=num_aleatorio_uno-num_aleatorio_dos;
+                    img_signo.setImageResource(R.drawable.resta);
+                }
+                else
+                {
+                    num_aleatorio();
+                }
+            }
+            if(resultado>=0){
                 for (int i=0;i<numero.length;i++){
                     int id=getResources().getIdentifier(numero[i],"drawable",getPackageName());
                     if(num_aleatorio_uno==i){
@@ -131,9 +148,13 @@ public class Main2Activity_nivel2 extends AppCompatActivity {
                         img_num2.setImageResource(id);
                     }
                 }
+            }
+            else{
+                num_aleatorio();
+            }
         }
         else{
-            Intent intent = new Intent(this,Main2Activity_nivel3.class);
+            Intent intent = new Intent(this,Main2Activity_nivel5.class);
             string_score=String.valueOf(score);
             string_vidas=String.valueOf(vidas);
 

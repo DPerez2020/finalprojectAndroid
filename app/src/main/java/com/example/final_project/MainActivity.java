@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 public class MainActivity extends AppCompatActivity {
 
     private EditText edt_nombre;
@@ -85,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
             mp.stop();
             mp.release();
 
-            Intent intent = new Intent(this,Main2Activity_nivel1.class);
+            Intent intent = new Intent(this,Main2Activity_nivel7.class);
             intent.putExtra("jugador",nombre);
             startActivity(intent);
             finish();
@@ -101,6 +102,5 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        //super.onBackPressed();
     }
 }

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/wallpaperprincipal"
-    tools:context=".Main2Activity_nivel3">
+    tools:context=".Main2Activity_nivel7">
 
     <TextView
         android:id="@+id/textView_score"
@@ -78,17 +78,17 @@
 
     <ImageView
         android:id="@+id/imageView_signo"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="119dp"
+        android:layout_height="89dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="145dp"
-        android:layout_marginLeft="145dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginStart="141dp"
+        android:layout_marginLeft="141dp"
+        android:layout_marginTop="156dp"
         android:contentDescription="@string/app_name"
-        app:srcCompat="@drawable/resta" />
+        app:srcCompat="@drawable/division" />
 
     <ImageView
         android:id="@+id/imageView_Num2"
@@ -97,9 +97,9 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="140dp"
-        android:layout_marginEnd="-1dp"
-        android:layout_marginRight="-1dp"
+        android:layout_marginTop="145dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
         android:contentDescription="@string/app_name"
         app:srcCompat="@drawable/cero" />
 
