@@ -132,4 +132,27 @@
         android:onClick="comparar"
         android:text="@string/btn_sumar"
         android:textColor="@android:color/background_light" />
+    <TextView
+        android:id="@+id/txv_cuentagresiva"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="165dp"
+        android:layout_marginLeft="165dp"
+        android:layout_marginTop="99dp"
+        android:text="TextView" />
+
+    <ProgressBar
+        android:id="@+id/pgb_tiempo"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="14dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="129dp" />
 </RelativeLayout>
