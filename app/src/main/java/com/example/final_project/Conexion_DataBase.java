@@ -6,20 +6,20 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
-public class DataBase extends SQLiteOpenHelper {
-    private static DataBase instancia=null;
+public class Conexion_DataBase extends SQLiteOpenHelper {
+    private static Conexion_DataBase instancia=null;
     private String crear="create table Puntaje(Nombre text, Score int)";
-    public static DataBase getInstancia(Context ctx,String name, int version){
+    public static Conexion_DataBase getInstancia(Context ctx, String name, int version){
         if(instancia==null){
-            instancia= new DataBase(ctx,name,null,version);
+            instancia= new Conexion_DataBase(ctx,name,null,version);
         }
         return instancia;
     }
-    /*private DataBase(Context ctx){
+    /*private Conexion_DataBase(Context ctx){
         super(ctx,"Puntajes",null,1);
 
     }*/
-    public DataBase(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
+    public Conexion_DataBase(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
 

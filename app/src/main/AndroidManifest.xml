@@ -12,13 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Main2Activity_nivel7"></activity>
-        <activity android:name=".Main2Activity_nivel6" />
-        <activity android:name=".Main2Activity_nivel5" />
-        <activity android:name=".Main2Activity_nivel4" />
-        <activity android:name=".Main2Activity_nivel3" />
-        <activity android:name=".Main2Activity_nivel2" />
+        <activity android:name=".nivel6" />
+        <activity android:name=".nivel5" />
+        <activity android:name=".nivel4" />
+        <activity android:name=".nivel3" />
+        <activity android:name=".nivel2" />
         <activity
-            android:name=".Main2Activity_nivel1"
+            android:name=".nivel1"
             android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"

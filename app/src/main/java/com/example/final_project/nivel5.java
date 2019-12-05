@@ -2,10 +2,7 @@ package com.example.final_project;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.ContentValues;
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
@@ -14,13 +11,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Main2Activity_nivel2 extends AppCompatActivity {
+public class nivel5 extends AppCompatActivity {
 
     private TextView txv_score,txv_nombre;
     private ImageView img_num1,img_num2,img_vidas;
     private EditText edt_respuesta;
     private MediaPlayer mp,mp_great,mp_bad;
-
+    Funtionality_Market funcionality = new Funtionality_Market();
     int score,num_aleatorio_uno,num_aleatorio_dos,resultado,vidas=3;
     String nombre_jugador,string_score,string_vidas;
     String numero[]={"cero","uno","dos","tres","cuatro","cinco","seis","siete","ocho","nueve"};
@@ -28,8 +25,8 @@ public class Main2Activity_nivel2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2_nivel1);
-        Toast.makeText(this,"Nivel 2- Sumas moderadas",Toast.LENGTH_SHORT).show();
+        setContentView(R.layout.nivel5);
+        Toast.makeText(this,"Nivel 5- Multiplicacion",Toast.LENGTH_SHORT).show();
         txv_score=findViewById(R.id.textView_score);
         txv_nombre=findViewById(R.id.textView_nombre);
         img_num1=findViewById(R.id.imageView_Num1);
@@ -80,13 +77,13 @@ public class Main2Activity_nivel2 extends AppCompatActivity {
 
                 edt_respuesta.setText("");
 
-                BaseDeDatos();
+                funcionality.setDataBase(this,score,nombre_jugador);
 
             }else
             {
                 mp_bad.start();
                 vidas--;
-                BaseDeDatos();
+                funcionality.setDataBase(this,score,nombre_jugador);
 
                 switch (vidas){
                     case 3:
@@ -118,22 +115,22 @@ public class Main2Activity_nivel2 extends AppCompatActivity {
     }
 
     public void num_aleatorio(){
-        if(score<=9){
+        if(score<=24){
             num_aleatorio_uno= (int)(Math.random()*10);
             num_aleatorio_dos= (int)(Math.random()*10);
 
-            resultado=num_aleatorio_dos+num_aleatorio_uno;
-                for (int i=0;i<numero.length;i++){
-                    int id=getResources().getIdentifier(numero[i],"drawable",getPackageName());
-                    if(num_aleatorio_uno==i){
-                        img_num1.setImageResource(id);
-                    }else if(num_aleatorio_dos==i){
-                        img_num2.setImageResource(id);
-                    }
+            resultado=num_aleatorio_dos*num_aleatorio_uno;
+            for (int i=0;i<numero.length;i++){
+                int id=getResources().getIdentifier(numero[i],"drawable",getPackageName());
+                if(num_aleatorio_uno==i){
+                    img_num1.setImageResource(id);
+                }else if(num_aleatorio_dos==i){
+                    img_num2.setImageResource(id);
                 }
+            }
         }
         else{
-            Intent intent = new Intent(this,Main2Activity_nivel3.class);
+            Intent intent = new Intent(this, nivel6.class);
             string_score=String.valueOf(score);
             string_vidas=String.valueOf(vidas);
 
@@ -145,33 +142,6 @@ public class Main2Activity_nivel2 extends AppCompatActivity {
             finish();
             mp.stop();
             mp.release();
-        }
-    }
-
-    public void BaseDeDatos(){
-        DataBase dataBase=DataBase.getInstancia(this,"DB",1);
-        SQLiteDatabase DB= dataBase.getWritableDatabase();
-        Cursor consulta= DB.rawQuery(
-                "Select * from Puntaje where Score= (select max(Score) from Puntaje)",null);
-        if(consulta.moveToFirst()){
-            String tem_nombre=consulta.getString(0);
-            String tem_score=consulta.getString(1);
-
-            int best_score=Integer.parseInt(tem_score);
-            if(score>best_score){
-                ContentValues modificacion= new ContentValues();
-                modificacion.put("Nombre",nombre_jugador);
-                modificacion.put("Score",score);
-
-                DB.update("Puntaje",modificacion,"Score="+best_score,null);
-            }
-            DB.close();
-        }else{
-            ContentValues insertar= new ContentValues();
-            insertar.put("Nombre",nombre_jugador);
-            insertar.put("Score",score);
-            DB.insert("Puntaje",null,insertar);
-            DB.close();
         }
     }
 

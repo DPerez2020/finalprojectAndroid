@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/wallpaperprincipal"
-    tools:context=".Main2Activity_nivel5">
+    tools:context=".nivel1">
 
     <TextView
         android:id="@+id/textView_score"
@@ -72,7 +72,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="0dp"
         android:layout_marginLeft="0dp"
-        android:layout_marginTop="139dp"
+        android:layout_marginTop="183dp"
         android:contentDescription="@string/app_name"
         app:srcCompat="@drawable/cero" />
 
@@ -86,9 +86,9 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="145dp"
         android:layout_marginLeft="145dp"
-        android:layout_marginTop="143dp"
+        android:layout_marginTop="181dp"
         android:contentDescription="@string/app_name"
-        app:srcCompat="@drawable/multiplicacion" />
+        app:srcCompat="@drawable/adicion" />
 
     <ImageView
         android:id="@+id/imageView_Num2"
@@ -97,9 +97,9 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="145dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginRight="2dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginRight="7dp"
         android:contentDescription="@string/app_name"
         app:srcCompat="@drawable/cero" />
 
@@ -111,9 +111,9 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="109dp"
-        android:layout_marginLeft="109dp"
-        android:layout_marginBottom="195dp"
+        android:layout_marginStart="115dp"
+        android:layout_marginLeft="115dp"
+        android:layout_marginBottom="129dp"
         android:ems="10"
         android:hint="@string/edt_respuesta"
         android:inputType="number" />
@@ -125,11 +125,35 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="33dp"
-        android:layout_marginRight="33dp"
-        android:layout_marginBottom="198dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="136dp"
         android:background="@drawable/fondoboton"
         android:onClick="comparar"
         android:text="@string/btn_sumar"
         android:textColor="@android:color/background_light" />
+
+    <TextView
+        android:id="@+id/txv_cuentagresiva"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="165dp"
+        android:layout_marginLeft="165dp"
+        android:layout_marginTop="99dp"
+        android:text="TextView" />
+
+    <ProgressBar
+        android:id="@+id/pgb_tiempo"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="14dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="129dp" />
 </RelativeLayout>

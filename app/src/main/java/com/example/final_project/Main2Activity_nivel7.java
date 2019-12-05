@@ -144,8 +144,8 @@ public class Main2Activity_nivel7 extends AppCompatActivity {
     }
 
     public void BaseDeDatos(){
-        DataBase dataBase=DataBase.getInstancia(this,"DB",1);
-        SQLiteDatabase DB= dataBase.getWritableDatabase();
+        Conexion_DataBase conexionDataBase = Conexion_DataBase.getInstancia(this,"DB",1);
+        SQLiteDatabase DB= conexionDataBase.getWritableDatabase();
         Cursor consulta= DB.rawQuery(
                 "Select * from Puntaje where Score= (select max(Score) from Puntaje)",null);
         if(consulta.moveToFirst()){

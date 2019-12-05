@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/wallpaperprincipal"
-    tools:context=".Main2Activity_nivel2">
+    tools:context=".nivel3">
 
     <TextView
         android:id="@+id/textView_score"
@@ -86,9 +86,9 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="145dp"
         android:layout_marginLeft="145dp"
-        android:layout_marginTop="143dp"
+        android:layout_marginTop="140dp"
         android:contentDescription="@string/app_name"
-        app:srcCompat="@drawable/adicion" />
+        app:srcCompat="@drawable/resta" />
 
     <ImageView
         android:id="@+id/imageView_Num2"
@@ -97,9 +97,9 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="145dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginRight="2dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="-1dp"
+        android:layout_marginRight="-1dp"
         android:contentDescription="@string/app_name"
         app:srcCompat="@drawable/cero" />
 

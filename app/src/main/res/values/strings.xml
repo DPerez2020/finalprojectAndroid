@@ -8,4 +8,5 @@
     <string name="txv_total_score">Score: 0</string>
     <string name="btn_sumar">Comprobar</string>
     <string name="edt_respuesta">Respuesta</string>
+    <string name="compartir">Compartir</string>
 </resources>
